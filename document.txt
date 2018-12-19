@@ -1,0 +1,4 @@
+требует не менее 5 гигабайт места
+
+npm install --global --production windows-build-tools
+npm install -g node-gyp
