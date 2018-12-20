@@ -1,0 +1,16 @@
+file-commander-wrapper
+{
+    display: block;
+    padding: 20px;
+}
+
+file-commander-wrapper directory-wrapper
+{
+    display: block;
+    cursor: pointer;
+}
+
+file-commander-wrapper file-wrapper
+{
+    display: block;
+}

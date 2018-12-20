@@ -1,7 +1,16 @@
-var ffi = require('ffi')
+var express = require('express')
+var bodyParser = require('body-parser')
+var fileSystem = require('./file-system')
 
-var msvcrt = ffi.Library('msvcrt', {
-    'printf': ['void', ['string']]
+var server = express()
+
+server.use(bodyParser.json())
+server.use(express.static(__dirname + '/view'))
+
+server.post('/files', function(request, response) {
+    var path = request.body.path
+    var files = fileSystem.getFileStructure(path)
+    response.send(files)
 })
 
-msvcrt.printf("sadfas")
+server.listen(8000)
